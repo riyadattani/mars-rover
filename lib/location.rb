@@ -10,6 +10,13 @@ class Location
     'W' => 'N'
   }.freeze
 
+  LEFT = {
+    'N' => 'W',
+    'E' => 'N',
+    'S' => 'E',
+    'W' => 'S'
+  }.freeze
+
   def initialize(x, y, direction)
     @x = x
     @y = y
@@ -18,5 +25,9 @@ class Location
 
   def turn_right
     @direction = RIGHT[@direction]
+  end
+
+  def turn_left
+    @direction = LEFT[@direction]
   end
 end
