@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Location
+class Rover_location
   attr_reader :direction, :y, :x
 
   RIGHT = {
@@ -17,7 +17,7 @@ class Location
     'W' => 'S'
   }.freeze
 
-  def initialize(x, y, direction)
+  def initialize(x = 0, y = 0, direction = 'N')
     @x = x
     @y = y
     @direction = direction
