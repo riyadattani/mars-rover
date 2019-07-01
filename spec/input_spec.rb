@@ -10,7 +10,7 @@ describe Input do
   describe '#plateau_coordinates' do
     it 'separates the plateau coordinates' do
       @input.plateau_coordinates
-      expect(@input.plateau_limit).to eq([{max_x: 5, max_y: 5}])
+      expect(@input.plateau_limit).to eq([{ max_x: 5, max_y: 5 }])
     end
   end
 

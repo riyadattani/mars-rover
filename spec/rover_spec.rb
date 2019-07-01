@@ -3,7 +3,6 @@
 require 'rover'
 
 describe Rover do
-
   before(:each) do
     @rover = Rover.new(x: 1, y: 2, direction: 'N', route: 'LMLMLMLMM')
   end

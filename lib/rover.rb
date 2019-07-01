@@ -28,7 +28,7 @@ class Rover
     Location.new(@x, @y, @direction)
   end
 
-  def execute_route(location)
+  def execute_route(_location)
     @route.each do |command|
       case command
       when 'L'
