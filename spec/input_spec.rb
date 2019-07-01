@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'input'
 
 describe Input do
@@ -15,19 +17,19 @@ describe Input do
     it 'identifies the instructions' do
       @input.create_instructions
       expect(@input.instructions).to eq([
-        {
-          x: 1,
-          y: 2,
-          direction: 'N',
-          route: 'LMLMLMLMM'
-        },
-        {
-          x: 3,
-          y: 3,
-          direction: 'E',
-          route: 'MMRMMRMRRM'
-        }
-        ])
+                                          {
+                                            x: 1,
+                                            y: 2,
+                                            direction: 'N',
+                                            route: 'LMLMLMLMM'
+                                          },
+                                          {
+                                            x: 3,
+                                            y: 3,
+                                            direction: 'E',
+                                            route: 'MMRMMRMRRM'
+                                          }
+                                        ])
     end
   end
 end

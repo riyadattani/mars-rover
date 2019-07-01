@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Input
   attr_reader :instructions
 
@@ -19,7 +21,7 @@ class Input
   end
 
   private
-  
+
   def process_string(i)
     {
       x: split_by_line[i].split(' ')[0].to_i,
