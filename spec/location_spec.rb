@@ -54,4 +54,34 @@ describe Location do
       expect(location.direction).to eq('S')
     end
   end
+
+  describe "#move" do
+    it 'y should increase by one if facing north' do
+      location = Location.new(0, 0, 'N')
+      location.move
+      expect(location.x).to eq(0)
+      expect(location.y).to eq(1)
+    end
+
+    it 'y should decrease by one if facing south' do
+      location = Location.new(0, 0, 'S')
+      location.move
+      expect(location.x).to eq(0)
+      expect(location.y).to eq(-1)
+    end
+
+    it 'x should increase by one if facing east' do
+      location = Location.new(0, 0, 'E')
+      location.move
+      expect(location.x).to eq(1)
+      expect(location.y).to eq(0)
+    end
+
+    it 'x should decrease by one if facing west' do
+      location = Location.new(0, 0, 'W')
+      location.move
+      expect(location.x).to eq(-1)
+      expect(location.y).to eq(0)
+    end
+  end
 end

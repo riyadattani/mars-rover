@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Location
-  attr_reader :direction
+  attr_reader :direction, :y, :x
 
   RIGHT = {
     'N' => 'E',
@@ -29,5 +29,18 @@ class Location
 
   def turn_left
     @direction = LEFT[@direction]
+  end
+
+  def move
+    case @direction
+    when 'N'
+      @y += 1
+    when 'S'
+      @y -= 1
+    when 'E'
+      @x += 1
+    when 'W'
+      @x -= 1
+    end
   end
 end
