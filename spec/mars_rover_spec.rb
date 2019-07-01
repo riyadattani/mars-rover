@@ -11,4 +11,62 @@ describe Mars_rover do
       expect(@mars_rover.instructions_string).to eq("5 5\n1 2 N\nLMLMLMLMM\n3 3 E\nMMRMMRMRRM")
     end
   end
+
+  describe "#parse_instructions" do
+    let(:input_double) { double :input, create_instructions: nil, instructions: [
+                              {
+                                direction: 'N',
+                                x: 1,
+                                y: 2,
+                                route: 'LMLMLMLMM'
+                              },
+                              {
+                                direction: 'E',
+                                x: 3,
+                                y: 3,
+                                route: 'MMRMMRMRRM'
+                              }
+                              ]
+                            }
+    it "parses instructions" do
+      @mars_rover.instruct("5 5\n1 2 N\nLMLMLMLMM\n3 3 E\nMMRMMRMRRM")
+      expect(@mars_rover.parse_instructions(input_double)).to eq([
+                                                              {
+                                                                direction: 'N',
+                                                                x: 1,
+                                                                y: 2,
+                                                                route: 'LMLMLMLMM'
+                                                              },
+                                                              {
+                                                                direction: 'E',
+                                                                x: 3,
+                                                                y: 3,
+                                                                route: 'MMRMMRMRRM'
+                                                              }
+                                                            ])
+    end
+  end
+
+  describe '#launch_rovers' do
+    let(:input_double) { double :input, create_instructions: nil, instructions: [
+                              {
+                                direction: 'N',
+                                x: 1,
+                                y: 2,
+                                route: 'LMLMLMLMM'
+                              },
+                              {
+                                direction: 'E',
+                                x: 3,
+                                y: 3,
+                                route: 'MMRMMRMRRM'
+                              }
+                              ]
+                            }
+    it 'launch each rover and return final location' do
+      @mars_rover.instruct("5 5\n1 2 N\nLMLMLMLMM\n3 3 E\nMMRMMRMRRM")
+      @mars_rover.parse_instructions(input_double)
+      expect(@mars_rover.launch_rovers).to eq("1 3 N\n5 1 E")
+    end
+  end
 end
