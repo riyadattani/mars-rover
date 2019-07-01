@@ -30,5 +30,7 @@ describe Rover do
       @another_rover.travel
       expect(@another_rover.report_location).to eq('5 1 E')
     end
+
+
   end
 end

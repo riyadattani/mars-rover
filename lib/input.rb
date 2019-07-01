@@ -1,15 +1,16 @@
 # frozen_string_literal: true
 
 class Input
-  attr_reader :instructions
+  attr_reader :instructions, :plateau_limit
 
   def initialize(string)
     @string = string
     @instructions = []
+    @plateau_limit = []
   end
 
   def plateau_coordinates
-    split_by_line[0]
+    @plateau_limit << process_plateau_cordinates
   end
 
   def create_instructions
@@ -28,6 +29,13 @@ class Input
       y: split_by_line[i].split(' ')[1].to_i,
       direction: split_by_line[i].split(' ')[2],
       route: split_by_line[i + 1]
+    }
+  end
+
+  def process_plateau_cordinates
+    {
+      max_x: split_by_line[0].split(' ')[0].to_i,
+      max_y: split_by_line[0].split(' ')[1].to_i
     }
   end
 

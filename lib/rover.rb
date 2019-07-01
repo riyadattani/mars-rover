@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require_relative 'location'
+# require_relative 'plateau'
 
 class Rover
   attr_reader :x, :y, :direction, :route
@@ -17,9 +18,9 @@ class Rover
   end
 
   def travel
-    location = location_object
-    execute_route(location)
-    new_location(location.x, location.y, location.direction)
+    @location = location_object
+    execute_route(@location)
+    new_location(@location.x, @location.y, @location.direction)
   end
 
   private
@@ -32,11 +33,11 @@ class Rover
     @route.each do |command|
       case command
       when 'L'
-        location.turn_left
+        @location.turn_left
       when 'R'
-        location.turn_right
+        @location.turn_right
       when 'M'
-        location.move
+        @location.move
       end
     end
   end
