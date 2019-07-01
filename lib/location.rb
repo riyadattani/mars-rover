@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Rover_location
+class Location
   attr_reader :direction, :y, :x
 
   RIGHT = {
