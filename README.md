@@ -7,6 +7,7 @@ The problem: The rovers are to navigate around a plateau in Mars to send back pi
 This is a tech test provided by ThoughtWorks. See full task [here](TASK.md).
 
 ### Build status
+[![Build Status](https://travis-ci.com/riyadattani/mars-rover.svg?token=omuEMuWddHW8rAzcXzQp&branch=master)](https://travis-ci.com/riyadattani/mars-rover)
 
 ### How to use
 

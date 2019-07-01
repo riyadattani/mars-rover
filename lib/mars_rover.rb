@@ -18,15 +18,21 @@ class Mars_rover
 
   def launch_rovers
     @parsed_instructions.each do |instruction|
-      final_location = launch_rover(instruction)
-      @output == '' ? @output += final_location : @output += "\n#{final_location}"
+      @final_location = launch_rover(instruction)
+      output
     end
     @output
   end
+
+  private
 
   def launch_rover(instruction)
     rover = Rover.new(instruction)
     rover.travel
     rover.report_location
+  end
+
+  def output
+    @output == '' ? @output += @final_location : @output += "\n#{@final_location}"
   end
 end
